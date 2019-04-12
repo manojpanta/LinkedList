@@ -19,6 +19,7 @@ class LinkedList
   end
 
   def count
+    return nil if @head.nil?
     count = 1
     current_node = @head
     until current_node.next_node == nil
@@ -28,10 +29,12 @@ class LinkedList
     count
   end
 
-  def to_string
-    current = @head
+  def to_string(current=@head, length=count)
+    return nil if current.nil?
+
     string  = "#{current.data}"
-    until  current.next_node == nil
+
+    (length -1).times do
       current = current.next_node
       string << (" " + current.data)
     end
@@ -55,5 +58,23 @@ class LinkedList
     node = Node.new(data)
     node.next_node = current.next_node
     current.next_node = node
+  end
+
+  def find(position, length)
+    current = @head
+    position.times do
+      current = current.next_node
+    end
+    to_string(current, length)
+  end
+
+  def includes?(data, current = @head)
+    begin
+      return true if current.data == data
+      current = current.next_node
+      includes?(data, current)
+    rescue NoMethodError
+      false
+    end
   end
 end

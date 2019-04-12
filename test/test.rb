@@ -65,3 +65,29 @@ require 'rb-readline'
 # "woo"
 # list.to_string
 # "dop woo plop suu"
+
+
+### iteration 4
+# require "./lib/linked_list"
+# list = LinkedList.new
+# list.append("deep")
+# list.append("woo")
+# list.append("shi")
+# list.append("shu")
+# list.append("blop")
+# "deep woo shi shu blop"
+# list.find(2, 1)
+# "shi"
+# binding.pry
+# list.find(1, 3)
+# "woo shi shu"
+# list.includes?("deep")
+# true
+# list.includes?("dep")
+# false
+# list.pop
+# "blop"
+# list.pop
+# "shu"
+# list.to_string
+# "deep woo shi"
