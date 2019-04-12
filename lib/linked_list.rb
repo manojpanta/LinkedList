@@ -1,13 +1,17 @@
 require_relative 'node'
 class LinkedList
-  attr_accessor :head
+  attr_reader :head
 
   def initialize
     @head = nil
   end
 
   def append(node)
-    @head = Node.new(node)
+    if @head.nil?
+      @head = Node.new(node)
+    else
+      @head.next_node = Node.new(node)
+    end
   end
 
   def count
@@ -25,7 +29,7 @@ class LinkedList
     string  = current.data
     until  current.next_node == nil
       current = current.next_node
-      string << current.data
+      string << (" " + current.data)
     end
     string
   end
