@@ -16,7 +16,9 @@ class JungleBeat
     @list.count
   end
 
-
-
-
+  def play
+    beats = @list.to_string
+    binding.pry
+    `say -r "this is me "`
+  end
 end
