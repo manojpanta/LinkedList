@@ -21,7 +21,7 @@ require 'rb-readline'
 # list.to_string
 # "doop"
 
-
+##iteration 2
 #
 # require "./lib/linked_list"
 # list = LinkedList.new
@@ -44,3 +44,24 @@ require 'rb-readline'
 # 2
 # list.to_string
 # "doop deep"
+
+
+##iteration 3
+
+
+# require "./lib/linked_list"
+# list = LinkedList.new
+# binding.pry
+# list.append("plop")
+# list.to_string
+# list.append("suu")
+# list.prepend("dop")
+# "dop"
+# list.to_string
+# "dop plop suu"
+# list.count
+# 3
+# list.insert(3, "woo")
+# "woo"
+# list.to_string
+# "dop woo plop suu"
